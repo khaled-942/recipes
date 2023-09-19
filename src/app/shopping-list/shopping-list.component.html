@@ -1,0 +1,9 @@
+<div class="container">
+    <app-shopping-details></app-shopping-details>
+    <hr>
+    <ul class="list-group">
+        <a href="#" class="list-group-item pointer" *ngFor="let ingredient of Ingredients">
+            {{ingredient.name}} ({{ingredient.amount}})
+        </a>
+    </ul>
+</div>
