@@ -8,13 +8,6 @@ import { Recipe } from 'src/app/shared/models/recipe.model';
 })
 export class RecipeDetailsComponent implements OnInit {
   @Input() itemD!: Recipe;
-  recipes?: Recipe[] = [
-    new Recipe(
-      'pasta',
-      'pasta with white Sauce',
-      '../../../assets/images/place.png'
-    ),
-  ];
   constructor() {}
 
   ngOnInit(): void {}
