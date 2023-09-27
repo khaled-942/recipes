@@ -3,7 +3,21 @@
     <div class="card-body">
         <h5 class="card-title">{{itemD.name}}</h5>
         <p class="card-text">{{itemD.description}}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="dropdown" appDropdown>
+            <button class="btn btn-secondary dropdown-toggle">
+                Manage Recipe <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dorpItems">
+                <li><a class="dropdown-item pointer" (click)="addtoShopList()">To Shopping List</a></li>
+                <li><a class="dropdown-item pointer" href="#">Edit Recipe</a></li>
+                <li><a class="dropdown-item pointer" href="#">Delete Recipe</a></li>
+            </ul>
+        </div>
+        <ul class="list-group mt-2">
+            <li class="list-group-item pointer" *ngFor="let ingrediants of itemD.ingrediants">
+                {{ingrediants.name}} - {{ingrediants.amount}}
+            </li>
+        </ul>
     </div>
 </div>
 

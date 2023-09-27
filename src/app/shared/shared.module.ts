@@ -4,6 +4,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { CustomngifDirective } from './directives/customngif.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 
 
@@ -12,7 +13,8 @@ import { CustomngifDirective } from './directives/customngif.directive';
     FooterComponent,
     HeaderComponent,
     HighlightDirective,
-    CustomngifDirective
+    CustomngifDirective,
+    DropdownDirective
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { CustomngifDirective } from './directives/customngif.directive';
     FooterComponent,
     HeaderComponent,
     HighlightDirective,
-    CustomngifDirective
+    CustomngifDirective,
+    DropdownDirective
   ]
 })
 export class SharedModule { }
