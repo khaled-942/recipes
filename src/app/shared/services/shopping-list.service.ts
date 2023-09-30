@@ -5,7 +5,8 @@ import { Ingredients } from '../models/ingredients.model';
   providedIn: 'root',
 })
 export class ShoppingListService {
-  addItems = new EventEmitter<Ingredients[]>()
+  addItems = new EventEmitter<Ingredients[]>();
+  updateIngredients = new EventEmitter<Ingredients[]>();
   private Ingredients: Ingredients[] = [
     new Ingredients('Appels', 5),
     new Ingredients('Tomatos', 10),
@@ -18,6 +19,11 @@ export class ShoppingListService {
 
   addIngrediant(ingredient: Ingredients) {
     this.Ingredients.push(ingredient);
-    this.addItems.emit(this.Ingredients.slice())
+    this.addItems.emit(this.Ingredients.slice());
+  }
+  updateIngrediant(ingredient: Ingredients[]) {
+    // this.Ingredients.push(...ingredient);  if i need the past value
+    this.Ingredients = ingredient;
+    this.updateIngredients.emit(this.Ingredients.slice());
   }
 }

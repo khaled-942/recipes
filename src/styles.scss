@@ -10,3 +10,10 @@
 .show .dropdown-menu {
     display: block !important;
 }
+
+.dropdown-item {
+
+    &:hover {
+        background-color: rgb(166, 235, 235);
+    }
+}
