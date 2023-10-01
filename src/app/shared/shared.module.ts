@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { CustomngifDirective } from './directives/customngif.directive';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
     DropdownDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports:[
     FooterComponent,

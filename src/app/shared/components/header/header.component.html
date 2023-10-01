@@ -1,19 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-default bg-secondary text-white">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand text-white">Recipe Book</a>
+        <div class="navbar-header" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="navbar-brand text-white pointer" routerLink="">Recipe Book</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav gap-3">
-                <li><a href="#" class="text-reset text-decoration-none">Recipes</a></li>
-                <li><a href="#" class="text-reset text-decoration-none">Shopping List</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a class="text-reset text-decoration-none pointer" routerLink="recipes">Recipes</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a class="text-reset text-decoration-none pointer" routerLink="cart">Shopping List</a></li>
             </ul>
             <ul class="nav navbar-nav ms-auto align-self-center justify-content-center d-flex gap-3">
                 <li class="dropdown" appDropdown>
-                    <a href="#" class="dropdown-toggle text-reset text-decoration-none" role="button">Manage <span class="caret"></span></a>
+                    <a class="dropdown-toggle text-reset text-decoration-none" role="button">Manage <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu dorpItems">
-                        <li><a href="#" class="text-reset text-decoration-none dropdown-item">Save Data</a></li>
-                        <li><a href="#" class="text-reset text-decoration-none dropdown-item">Fetch Data</a></li>
+                        <li><a class="text-reset text-decoration-none dropdown-item">Save Data</a></li>
+                        <li><a class="text-reset text-decoration-none dropdown-item">Fetch Data</a></li>
                     </ul>
                 </li>
                 <li>

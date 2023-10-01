@@ -5,6 +5,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const routes: Routes = [
   { path: '', component: RecipesComponent },
+  { path: 'recipes', component: RecipesComponent },
   { path: 'cart', component: ShoppingListComponent },
 ];
 
