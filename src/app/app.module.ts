@@ -10,6 +10,7 @@ import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipe
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingDetailsComponent } from './shopping-list/shopping-details/shopping-details.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ShoppingDetailsComponent } from './shopping-list/shopping-details/shopp
     SharedModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
