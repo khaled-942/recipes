@@ -1,8 +1,10 @@
-<div class="card mb-3 d-flex flex-row pointer" (click)="onSelect()">
-    <div class="card-body" *appCustomngif="false">
-        <h5 class="card-title" appHighlight [defaultColor]="'yellow'" [highColor]="'grey'">{{itemRecipe.name}}</h5>
-        <p class="card-text">{{itemRecipe.description}}</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<a [routerLink]="[index]" routerLinkActive="active">
+    <div class="card mb-3 d-flex flex-row pointer">
+        <div class="card-body" *appCustomngif="true">
+            <h5 class="card-title" appHighlight [defaultColor]="'yellow'" [highColor]="'grey'">{{itemRecipe.name}}</h5>
+            <p class="card-text">{{itemRecipe.description}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        <img [src]="itemRecipe.imgSrc" class="card-img-top w-50" alt="...">
     </div>
-    <img [src]="itemRecipe.imgSrc" class="card-img-top w-50" alt="...">
-</div>
+</a>

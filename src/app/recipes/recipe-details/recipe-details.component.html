@@ -1,4 +1,4 @@
-<div class="card mb-3" *ngIf="itemD ;else noSelected">
+<div class="card mb-3" *ngIf="itemD">
     <img [src]="itemD.imgSrc" class="card-img-top w-50 align-self-center" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{itemD.name}}</h5>
@@ -20,9 +20,3 @@
         </ul>
     </div>
 </div>
-
-<ng-template #noSelected>
-    <p>
-        No Items Selected To Show
-    </p>
-</ng-template>

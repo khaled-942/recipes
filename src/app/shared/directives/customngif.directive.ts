@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input, TemplateRef, ViewContainerRef } from '@an
 })
 export class CustomngifDirective {
 @Input() set appCustomngif(condition:boolean){
-  if(!condition){
+  if(condition){
     this.vcRef.createEmbeddedView(this.tempRef);
   }else{
       this.vcRef.clear();

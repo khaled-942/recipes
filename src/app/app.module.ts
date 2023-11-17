@@ -11,6 +11,7 @@ import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingDetailsComponent } from './shopping-list/shopping-details/shopping-details.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
     RecipeDetailsComponent,
     ShoppingListComponent,
     ShoppingDetailsComponent,
+    RecipeStartComponent
   ],
   imports: [
     BrowserModule,
