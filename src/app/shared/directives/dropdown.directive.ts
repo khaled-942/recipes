@@ -14,9 +14,7 @@ export class DropdownDirective{
   }
   @HostListener('document:click', ['$event'])
   clickout(event:Event) {
-    if(this.eleRef.nativeElement.contains(event.target)) {
-      console.log(event)
-    } else {
+    if(this.eleRef.nativeElement.contains(event.target)) { } else {
       this.eleRef.nativeElement?.classList.remove('show');
     }
   }

@@ -13,6 +13,7 @@ import { ShoppingDetailsComponent } from './shopping-list/shopping-details/shopp
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   imports: [
     BrowserModule,
     SharedModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [AuthGuard],

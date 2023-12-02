@@ -21,4 +21,7 @@ export class ShoppingListComponent implements OnInit {
       }
     );
   }
+  editingradient(index:number){
+    this.ShoppingService.specific.next(index)
+  }
 }
