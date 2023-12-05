@@ -1,1 +1,54 @@
-<p>recipe-edit works!</p>
+<div class="container">
+  <form [formGroup]="editRecipeForm" (ngSubmit)="editSubmit()">
+    <div class="control">
+      <label for="rName">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="rName"
+        id="rName"
+        formControlName="rName"
+      />
+    </div>
+    <div class="control">
+      <label for="rImage">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        name="rImage"
+        id="rImage"
+        formControlName="rImage"
+      />
+    </div>
+    <div class="control">
+      <label for="rDesc">Description</label>
+      <textarea
+        type="text"
+        class="form-control"
+        name="rDesc"
+        id="rDesc"
+        formControlName="rDesc"
+      ></textarea>
+    </div>
+    <div formArrayName="ingrediants">
+      <div
+        class="group d-flex mt-2 gap-2"
+        [formGroupName]="i"
+        *ngFor="let ing of ingrediantsArray.controls; let i = index"
+      >
+        <input type="text" class="form-control" formControlName="name" />
+        <input type="text" class="form-control w-25" formControlName="amount" />
+        <button type="button" class="btn btn-danger" (click)="removeIngradient(i)">X</button>
+      </div>
+      <div class="text-center">
+        <button type="button" (click)="addIngradient()" class="btn btn-info rounded-circle mt-2 text-white">
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="buttons mt-3 gap-2 d-flex">
+      <button type="submit" class="btn btn-success">Confirm</button>
+      <button type="button" class="btn btn-danger">Cancle</button>
+    </div>
+  </form>
+</div>

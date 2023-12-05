@@ -52,6 +52,11 @@ export class ShoppingDetailsComponent implements OnInit, OnDestroy {
     this.editMode = false;
   }
 
+  delete(){
+    this.ShoppingService.deletIngredientByIndex(this.ingredientIndex);
+    this.clear();
+  }
+
   addIngraient() {
     const newName = this.ingradientForm.value.name;
     const newAmount = this.ingradientForm.value.amount;
