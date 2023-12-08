@@ -7,7 +7,8 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Recipe } from 'src/app/shared/models/recipe.model';
 import { RecipesService } from 'src/app/shared/services/recipes.service';
 
 @Component({
@@ -21,6 +22,7 @@ export class RecipeEditComponent implements OnInit {
   editRecipeForm!: FormGroup;
   constructor(
     private routerActive: ActivatedRoute,
+    private route: Router,
     private fb: FormBuilder,
     private recipeServes: RecipesService
   ) {}
@@ -46,8 +48,8 @@ export class RecipeEditComponent implements OnInit {
       if (currentRecipe.ingrediants) {
         for (let ingrediant of currentRecipe.ingrediants) {
           const newAdd: FormGroup = new FormGroup({
-            name: new FormControl(ingrediant.name),
-            amount: new FormControl(ingrediant.amount),
+            name: new FormControl(ingrediant.name, Validators.required),
+            amount: new FormControl(ingrediant.amount, Validators.required),
           });
           recipeIngred.push(newAdd);
         }
@@ -67,17 +69,32 @@ export class RecipeEditComponent implements OnInit {
   }
 
   editSubmit() {
-    console.log(this.editRecipeForm.controls);
+    const newRecipe = new Recipe(
+      this.editRecipeForm.value.rName,
+      this.editRecipeForm.value.rDesc,
+      this.editRecipeForm.value.rImage,
+      this.editRecipeForm.value.ingrediants
+    );
+    if (this.editMode) {
+      this.recipeServes.updateNewRecipe(this.id, newRecipe);
+    } else {
+      this.recipeServes.addNewRecipe(newRecipe);
+    }
+    this.oncancel()
   }
   addIngradient() {
     const newAdd: FormGroup = new FormGroup({
-      name: new FormControl(null),
-      amount: new FormControl(null),
+      name: new FormControl(null, Validators.required),
+      amount: new FormControl(null, Validators.required),
     });
     this.ingrediantsArray.push(newAdd);
   }
 
   removeIngradient(index: number) {
     this.ingrediantsArray.removeAt(index);
+  }
+
+  oncancel() {
+    this.route.navigate(['../'], { relativeTo: this.routerActive });
   }
 }
