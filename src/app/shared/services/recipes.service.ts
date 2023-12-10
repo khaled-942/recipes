@@ -6,6 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
+
+// fireBase api
+// https://recipe-cd3c2-default-rtdb.firebaseio.com/
+
 export class RecipesService {
   private recipes: Recipe[] = [
     new Recipe(
